@@ -78,7 +78,7 @@ const BodyShapeCalculator = () => {
 
   const fetchPastResults = async (email) => {
     try {
-      const res = await fetch(`http://localhost:5000/get-results/${email}`);
+      const res = await fetch(`https://srinu-project.onrender.com/get-results/${email}`);
       const data = await res.json();
       setPastResults(data);
     } catch (err) {
