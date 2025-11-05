@@ -1,17 +1,25 @@
 import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
-import bcrypt from "bcryptjs"; 
+import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
-import dotenv from "dotenv"; // <--- You forgot this line
+import dotenv from "dotenv";
 import User from "./models/User.js";
 import Shape from "./models/ShapeModel.js";
 
-dotenv.config(); // <--- This now works
+dotenv.config();
 
 const app = express();
 app.use(express.json());
-app.use(cors());
+
+// ✅ Allow frontend on Vercel
+app.use(
+  cors({
+    origin: ["https://fashionfusion-seven.vercel.app"], // your frontend domain
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true, // allow cookies / auth headers if needed
+  })
+);
 
 // ✅ MongoDB Connection (Atlas)
 const MONGO_URI =
