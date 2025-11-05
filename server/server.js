@@ -15,7 +15,7 @@ app.use(express.json());
 // ✅ Allow frontend on Vercel
 app.use(
   cors({
-    origin: ["https://fashionfusion-seven.vercel.app"], // your frontend domain
+    origin: ["https://srinu-project.vercel.app"], // your frontend domain
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true, // allow cookies / auth headers if needed
   })
