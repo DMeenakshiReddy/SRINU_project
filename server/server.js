@@ -1,7 +1,7 @@
 import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
-import bcrypt from "bcryptjs";
+import bcrypt from "bcryptjs"; 
 import jwt from "jsonwebtoken";
 import dotenv from "dotenv"; // <--- You forgot this line
 import User from "./models/User.js";
